@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     Vector2 movement;

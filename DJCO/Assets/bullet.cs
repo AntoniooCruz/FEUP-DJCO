@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
 
     public float speed = 20f;
     public Rigidbody2D rb;
@@ -19,7 +20,7 @@ public class bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.transform.tag != "RapidFire")
+        if (collision.gameObject.layer != 9)
         {
             Destroy(gameObject);
         }
