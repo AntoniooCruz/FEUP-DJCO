@@ -18,8 +18,9 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireRate = 0.2f;
     private float nextFire = 0.0f;
+    private int powerLvl = 1;
 
-    public Dictionary<powerUps,int> powerUp = new Dictionary<powerUps,int>();
+    public Dictionary<powerUps, int> powerUp = new Dictionary<powerUps, int>();
 
     // Update is called once per frame
     void Update()
@@ -52,24 +53,32 @@ public class Weapon : MonoBehaviour
 
     private void ShotGunShot()
     {
-        for(int i = 1; i <= powerUp[powerUps.ShotgunShot]; i++)
+        for (int i = 1; i <= powerUp[powerUps.ShotgunShot]; i++)
         {
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, 20 / i));
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, -20 / i));
         }
-        
+
     }
 
-    private void IncrementCount(Dictionary<powerUps,int> powers,powerUps power)
+    private void IncrementCount(Dictionary<powerUps, int> powers, powerUps power)
     {
         int currentCount;
-        if(powers.TryGetValue(power,out currentCount))
+        if (powers.TryGetValue(power, out currentCount))
         {
             powers[power] = currentCount + 1;
         }
         else
         {
             powers[power] = 1;
+        }
+    }
+
+    public void IncreasePower()
+    {
+        if (powerLvl < 7)
+        {
+            powerLvl++;
         }
     }
 }

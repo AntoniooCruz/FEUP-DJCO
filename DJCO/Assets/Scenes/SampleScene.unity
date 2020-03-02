@@ -125,10 +125,9 @@ GameObject:
   - component: {fileID: 24469023}
   - component: {fileID: 24469026}
   - component: {fileID: 24469027}
-  - component: {fileID: 24469029}
   - component: {fileID: 24469028}
   - component: {fileID: 24469030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,6 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57672933093584fb6b2392c728b6173f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 5
   rb: {fileID: 24469026}
 --- !u!61 &24469028
@@ -262,7 +264,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -278,106 +280,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.67}
   m_EdgeRadius: 0
---- !u!114 &24469029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24469022}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc455822dff14d5ea787ff06de4ff76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  screenBounds: {x: 0, y: 0}
-  objectWidth: 0
-  objectHeight: 0
 --- !u!114 &24469030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +390,7 @@ GameObject:
   - component: {fileID: 1316594466}
   - component: {fileID: 1316594465}
   - component: {fileID: 1316594468}
+  - component: {fileID: 1316594469}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -568,6 +471,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgRend: {fileID: 1316594465}
   bgSpeed: 0.3
+--- !u!95 &1316594469
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316594464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1247c22b4517c4f04b50a6480b76bb42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1479977754
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1479977755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,8 +531,9 @@ GameObject:
   - component: {fileID: 2103028074}
   - component: {fileID: 2103028073}
   - component: {fileID: 2103028072}
+  - component: {fileID: 2103028075}
   m_Layer: 0
-  m_Name: Quad (1)
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,9 +581,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103028071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5, y: 0.024, z: 0.20949465}
+  m_LocalPosition: {x: 11, y: 0.024, z: 0.20949465}
   m_LocalScale: {x: 0.3, y: 9.933, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103028075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103028071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8003383192208491e9fa8c2c0f6d395f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rapidFire: {fileID: 4954303773814641880, guid: f24c54397996e451d9525d515521f7ca,
+    type: 3}
+  shotgunShot: {fileID: 4734389453699461535, guid: 26a87965381b64e4497204c083434a89,
+    type: 3}
+  emeralds:
+  - {fileID: 7899929721476033308, guid: 831e80b4407b0442cb353e189a83ef36, type: 3}
+  - {fileID: 4598200533402138785, guid: d63bc6363402b4652bb8958c7537516a, type: 3}
+  - {fileID: 6931083175411874666, guid: a6bff78e3dd2440abb3cf08b5fa275be, type: 3}
+  - {fileID: 3367195533735420370, guid: 7bb0ecc748be04392b0379231aedde1b, type: 3}
+  - {fileID: 3716452563017569612, guid: d7488121a36e544b39392bcf17d379d4, type: 3}
+  - {fileID: 747737141810789494, guid: 4fdea6cea1a7c4b0898809e620c88af8, type: 3}
+  - {fileID: 4702399774002157275, guid: e624615a03eb348f4ac93ff649550cc8, type: 3}
+  spawner: {fileID: 2103028074}
