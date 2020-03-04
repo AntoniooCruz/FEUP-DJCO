@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, yMin, yMax;
+}
+
 public class PlayerMovement : MonoBehaviour
 {
+
     [SerializeField] private LayerMask layerMask;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    public Boundary boundary;
     Vector2 movement;
 
- 
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -23,5 +31,5 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(pos);
     }
-    
+
 }
