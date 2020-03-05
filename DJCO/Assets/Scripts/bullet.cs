@@ -20,12 +20,16 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Boundary"))
+            return;
 
         if (collision.gameObject.layer != 9 && collision.gameObject.layer != 10)
         {
             Destroy(gameObject);
         }
-        
+
+
+
     }
 
     public void setPowerSprite(int powerLvl)
