@@ -7,10 +7,11 @@ public class DestroyByContact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
 
-        Debug.Log("Tag: " + this.tag + " || " + other.tag);
-        if(other.CompareTag ("Boundary") || other.CompareTag("Enemy")){
+        if(other.CompareTag ("Boundary") || other.CompareTag("Enemy") || other.CompareTag("Spawner")){
             return;
         }    
+
+        Debug.Log("Tag: " + this.tag + " || " + other);
 
         if(other.CompareTag ("Player")){
             // TODO: Take HP from the player

@@ -35,11 +35,11 @@ public class WaveSpawner : MonoBehaviour
     {
         if (state == SpawnState.WAITING)
         {
-            if(!EnemyIsAlive()) {
-                // Begin new round
-                Debug.Log("Wave Completed!");
+            if (!EnemyIsAlive())
+            {
+                WaveCompleted();
             }
-            else 
+            else
             {
                 return;
             }
@@ -57,6 +57,22 @@ public class WaveSpawner : MonoBehaviour
             waveCountdown -= Time.deltaTime;
         }
 
+    }
+
+    void WaveCompleted()
+    {
+        Debug.Log("Wave Completed!");
+
+        state = SpawnState.COUNTING;
+        waveCountdown = timeBetweenWaves;
+
+        if(nextWave + 1 > waves.Length - 1)
+        {
+            nextWave = 0;
+            Debug.Log("All waves complete! Looping...");
+        }
+
+        nextWave++;
     }
 
     bool EnemyIsAlive()
@@ -92,8 +108,9 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
+        Vector3 vec = new Vector3(13, Random.Range(-6,6), 0);
         Debug.Log("Spawning Enemy: " + _enemy.name);
-        Instantiate (_enemy, transform.position, transform.rotation);
+        Instantiate(_enemy, vec, transform.rotation);
     }
 
 }
