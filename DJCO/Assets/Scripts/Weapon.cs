@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     public float fireRate = 0.2f;
     private float nextFire = 0.0f;
     private int powerLvl = 1;
+    public PowerBar powerBar;
 
     public Dictionary<powerUps, int> powerUp = new Dictionary<powerUps, int>();
 
@@ -39,7 +40,6 @@ public class Weapon : MonoBehaviour
             ShotGunShot();
         }
         var obj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        obj.GetComponent<bullet>().setPowerSprite(powerLvl);
     }
 
     public void AddPowerUp(powerUps power)
@@ -61,8 +61,6 @@ public class Weapon : MonoBehaviour
         {
             var obj1 = Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, 20 / i));
             var obj2 = Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, -20 / i));
-            obj1.GetComponent<bullet>().setPowerSprite(powerLvl);
-            obj2.GetComponent<bullet>().setPowerSprite(powerLvl);
         }
 
     }
@@ -86,6 +84,7 @@ public class Weapon : MonoBehaviour
         {
             powerLvl++;
         }
+        powerBar.SetPowerlvl(powerLvl);
     }
 
     public int getPowerLvl()
