@@ -8,7 +8,7 @@ public class PowerBar : MonoBehaviour
     public Image circleBar;
     public Image extraBar;
 
-    private float maxPower = 7;
+    private float maxPower = 5;
 
     public void Start()
     {

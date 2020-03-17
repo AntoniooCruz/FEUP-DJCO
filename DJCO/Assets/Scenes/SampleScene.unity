@@ -132,10 +132,10 @@ GameObject:
   - component: {fileID: 24469025}
   - component: {fileID: 24469024}
   - component: {fileID: 24469023}
+  - component: {fileID: 24469030}
   - component: {fileID: 24469026}
   - component: {fileID: 24469027}
   - component: {fileID: 24469028}
-  - component: {fileID: 24469030}
   - component: {fileID: 24469029}
   m_Layer: 8
   m_Name: Player
@@ -324,11 +324,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddcfb762b4b14c4c932a876e671f221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1479977755}
-  bulletPrefab: {fileID: 8642119255753134414, guid: 8234d344f406b4268b8cb051a24d91b1,
-    type: 3}
-  fireRate: 0.2
-  powerBar: {fileID: 1015824486}
+  firePoint: {fileID: 0}
+  bulletPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fireRate: 0.5
+  powerBar: {fileID: 0}
 --- !u!1 &200568622
 GameObject:
   m_ObjectHideFlags: 0

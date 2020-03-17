@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
-
+    public int power;
     public float speed = 20f;
     public Rigidbody2D rb;
 
@@ -13,6 +13,7 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+        Debug.Log(power);
     }
 
     //TODO: Add enemy health removal
@@ -32,6 +33,11 @@ public class bullet : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    public void setPower(int power)
+    {
+        this.power = power;
     }
 
 }

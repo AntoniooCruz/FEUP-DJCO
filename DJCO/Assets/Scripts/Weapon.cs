@@ -15,10 +15,10 @@ public class Weapon : MonoBehaviour
     }
 
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float fireRate = 0.2f;
+    public GameObject[] bulletPrefabs = new GameObject[6];
+    public float fireRate = 0.5f;
     private float nextFire = 0.0f;
-    private int powerLvl = 1;
+    private int powerLvl = 0;
     public PowerBar powerBar;
 
     public Dictionary<powerUps, int> powerUp = new Dictionary<powerUps, int>();
@@ -39,7 +39,8 @@ public class Weapon : MonoBehaviour
         {
             ShotGunShot();
         }
-        var obj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var obj = Instantiate(bulletPrefabs[powerLvl], firePoint.position, firePoint.rotation);
+        
     }
 
     public void AddPowerUp(powerUps power)
@@ -49,9 +50,9 @@ public class Weapon : MonoBehaviour
 
     public void RapidFire()
     {
-        if(fireRate > 0.025f)
+        if(fireRate > 0.3f)
         {
-            fireRate = fireRate / 2;
+            fireRate = fireRate / 1.2f;
         }
     }
 
@@ -59,8 +60,8 @@ public class Weapon : MonoBehaviour
     {
         for (int i = 1; i <= powerUp[powerUps.ShotgunShot] && i <= 3; i++)
         {
-            var obj1 = Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, 20 / i));
-            var obj2 = Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0, 0, -20 / i));
+            var obj1 = Instantiate(bulletPrefabs[powerLvl], firePoint.position, Quaternion.Euler(0, 0, 20 / i));
+            var obj2 = Instantiate(bulletPrefabs[powerLvl], firePoint.position, Quaternion.Euler(0, 0, -20 / i));
         }
 
     }
@@ -80,7 +81,7 @@ public class Weapon : MonoBehaviour
 
     public void IncreasePower()
     {
-        if (powerLvl < 7)
+        if (powerLvl < 5)
         {
             powerLvl++;
         }
