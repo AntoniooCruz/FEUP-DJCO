@@ -124,8 +124,6 @@ GameObject:
   - component: {fileID: 8847733028862298202}
   - component: {fileID: 8847733028862298149}
   - component: {fileID: 8847733028862298150}
-  - component: {fileID: 8847733028862298201}
-  - component: {fileID: 8847733028862298151}
   m_Layer: 0
   m_Name: Enemy Ship
   m_TagString: Enemy
@@ -224,39 +222,3 @@ MonoBehaviour:
   bulletSpawn: {fileID: 8847733026968911943}
   fireRate: 4
   delay: 1
---- !u!114 &8847733028862298201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847733028862298200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7739d4825b2807887c0844c7c6adc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &8847733028862298151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847733028862298200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f18875ee6729ed7b92ab725547411b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dodge: 5
-  smoothing: 7.5
-  tilt: 1
-  startWait: {x: 0.5, y: 1}
-  maneuverTime: {x: 1, y: 2}
-  maneuverWait: {x: 1, y: 2}
-  boundary:
-    xMin: -11
-    xMax: 11
-    yMin: -6
-    yMax: 6
