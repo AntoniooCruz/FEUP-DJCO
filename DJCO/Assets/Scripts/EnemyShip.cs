@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyShip : MonoBehaviour
 {
-    public float speed;
+    [System.Serializable]
+    public class EnemyStats {
+        public float Health = 100.0f;
+    }
 
+    public EnemyStats stats = new EnemyStats();
+
+    public float speed;
     public float dodge;
     public float smoothing;
     public float tilt;
@@ -25,6 +31,8 @@ public class EnemyMovement : MonoBehaviour
         rb.velocity = new Vector2(-speed, 0.0f);
         StartCoroutine(Evade());
     }
+
+    // **** Movement **** // 
 
     IEnumerator Evade()
     {
@@ -55,6 +63,9 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+
+    // **** Collisions **** // 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -73,4 +84,15 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
+
+
+    // **** Health **** // 
+
+    public void DamageEnemy (float damage) {
+        stats.Health -= damage;
+        if(stats.Health <= 0) {
+            GameController.KillEnemy(this);
+        }
+    }
+
 }

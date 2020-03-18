@@ -7,15 +7,14 @@ public class GameController : MonoBehaviour
     public GameObject hazard;
     public Vector3 spawnValues;
 
-    // private void Start()
-    // {
-    //     SpawnWaves();
-    // }
 
-    // void SpawnWaves()
-    // {
-    //     Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-    //     Quaternion spawnRotation = Quaternion.identity;
-    //     Instantiate (hazard, spawnPosition, spawnRotation);
-    // }
+    public static void KillPlayer(Player player)
+    {
+        Destroy(player.gameObject);
+    }
+
+    public static void KillEnemy(EnemyShip enemy)
+    {
+        Destroy(enemy.gameObject);
+    }
 }

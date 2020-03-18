@@ -8,7 +8,7 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     [SerializeField] private LayerMask layerMask;

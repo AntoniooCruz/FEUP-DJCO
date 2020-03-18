@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed;
 
@@ -22,6 +22,7 @@ public class Mover : MonoBehaviour
             //TODO
             // Bullet Small Explosion
             // Destroy this bullet
+            Destroy(this.gameObject);
         }
         else if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
@@ -29,6 +30,7 @@ public class Mover : MonoBehaviour
             //TODO
             // Bullet Small Explosion
             // Destroy this bullet
+            Destroy(this.gameObject);
         }
     }
 }
