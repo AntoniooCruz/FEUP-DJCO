@@ -133,8 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5402259c8cd4a33bb3a4861f6dde88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1335
+  power: 0
   speed: 20
+  Basedamage: 10
   rb: {fileID: 8960066535937072298}
+  explosion: {fileID: 2488494843947891620, guid: 978fe8a6feca2f995b6e1133c0cd434a,
+    type: 3}

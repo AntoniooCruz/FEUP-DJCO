@@ -26,7 +26,7 @@ public abstract class PowerUp : MonoBehaviour
         PlayerStats playerStats = collision.GetComponent<PlayerStats>();
         if(playerStats != null)
         {
-            playerStats.TakeDamage(20);
+            //playerStats.TakeDamage(20);
         }
         
     }

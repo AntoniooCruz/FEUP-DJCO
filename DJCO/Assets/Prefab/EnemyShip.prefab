@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8847733028862298202}
   - component: {fileID: 5746173898211074800}
   - component: {fileID: -7670990317561543874}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -223,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a291c1645f8e4e20d95bd0e44fa7db39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    Health: 100
   speed: 3
   dodge: 5
   smoothing: 7.5
@@ -235,3 +237,4 @@ MonoBehaviour:
     xMax: 11
     yMin: -6
     yMax: 6
+  explosion: {fileID: 100004, guid: bd5a7ae3e8bd4c8499f69e8e45138021, type: 3}

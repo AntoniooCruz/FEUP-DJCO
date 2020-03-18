@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public float speed;
-
+    public GameObject explosion;
     private Rigidbody2D rb;
 
     void Start()
@@ -16,20 +16,18 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (LayerMask.LayerToName(other.gameObject.layer) == "PlayerBullet")
         {
-            Debug.Log("EnemyBullet VS PlayerBullet");
-            //TODO
-            // Bullet Small Explosion
-            // Destroy this bullet
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
             Destroy(this.gameObject);
         }
         else if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
-            Debug.Log("EnemyBullet VS Player");
-            //TODO
-            // Bullet Small Explosion
-            // Destroy this bullet
+            other.GetComponentInParent<Player>().TakeDamage(10);
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
             Destroy(this.gameObject);
         }
     }

@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -131,16 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5402259c8cd4a33bb3a4861f6dde88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1335
-  bulletsSprites:
-  - {fileID: 21300000, guid: 3f091cdd714fa4bee83159dac7244736, type: 3}
-  - {fileID: 21300000, guid: be90366cee19e4f3a9e57e6b68edb695, type: 3}
-  - {fileID: 21300000, guid: da3cdba256f7b4e3aa7be5c43645aaa4, type: 3}
-  - {fileID: 21300000, guid: 0e213835c52274423bcb1fe31aaadc89, type: 3}
-  - {fileID: 21300000, guid: 51d005a67baee4af98ece941dac8db1e, type: 3}
-  - {fileID: 21300000, guid: fa334a0285c5242d0965d6095a1929b2, type: 3}
-  - {fileID: 21300000, guid: 88131c13b2f8e47dc8c87c468eded141, type: 3}
+  power: 0
   speed: 20
+  Basedamage: 10
   rb: {fileID: 5057186495196327543}
+  explosion: {fileID: 2488494843947891620, guid: 978fe8a6feca2f995b6e1133c0cd434a,
+    type: 3}

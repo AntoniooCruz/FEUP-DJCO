@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour
 {
     [System.Serializable]
-    public class EnemyStats {
+    public class EnemyStats
+    {
         public float Health = 100.0f;
     }
 
@@ -19,6 +20,7 @@ public class EnemyShip : MonoBehaviour
     public Vector2 maneuverTime;
     public Vector2 maneuverWait;
     public Boundary boundary;
+    public GameObject explosion;
 
     private float currentSpeed;
 
@@ -68,29 +70,26 @@ public class EnemyShip : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (LayerMask.LayerToName(other.gameObject.layer) == "PlayerBullet")
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
-            Debug.Log("EnemyShip VS PlayerBullet");
-            //TODO
-            // EnemyShip take Damage
-
-        }
-        else if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
-        {
-            Debug.Log("EnemyShip VS Player");
-            //TODO
-            // EnemyShip take more damage
+            other.GetComponentInParent<Player>().TakeDamage(50);
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
+            GameController.KillEnemy(this);
         }
 
     }
 
-
     // **** Health **** // 
 
-    public void DamageEnemy (float damage) {
+    public void DamageEnemy(float damage)
+    {
         stats.Health -= damage;
-        if(stats.Health <= 0) {
+        Debug.Log("This ship just took " + damage + " damage!!");
+        if (stats.Health <= 0)
+        {
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
             GameController.KillEnemy(this);
         }
     }

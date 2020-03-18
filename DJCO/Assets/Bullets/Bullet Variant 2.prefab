@@ -12,6 +12,12 @@ PrefabInstance:
       propertyPath: power
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114914299166151674, guid: 8234d344f406b4268b8cb051a24d91b1,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 2488494843947891620, guid: 978fe8a6feca2f995b6e1133c0cd434a,
+        type: 3}
     - target: {fileID: 1000630459750622217, guid: 8234d344f406b4268b8cb051a24d91b1,
         type: 3}
       propertyPath: m_Sprite

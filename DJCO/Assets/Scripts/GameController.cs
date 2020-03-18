@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject hazard;
-    public Vector3 spawnValues;
 
 
     public static void KillPlayer(Player player)
@@ -16,5 +14,6 @@ public class GameController : MonoBehaviour
     public static void KillEnemy(EnemyShip enemy)
     {
         Destroy(enemy.gameObject);
+
     }
 }
