@@ -11,7 +11,6 @@ public class DestroyByContact : MonoBehaviour
             return;
         }    
 
-        Debug.Log("Tag: " + this.tag + " || " + other);
 
         if(other.CompareTag ("Player")){
             // TODO: Take HP from the player

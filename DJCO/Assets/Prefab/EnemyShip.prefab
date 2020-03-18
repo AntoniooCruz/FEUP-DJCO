@@ -122,10 +122,10 @@ GameObject:
   - component: {fileID: 8847733028862298148}
   - component: {fileID: 8847733028862298203}
   - component: {fileID: 8847733028862298202}
-  - component: {fileID: 8847733028862298149}
-  - component: {fileID: 8847733028862298150}
+  - component: {fileID: 5746173898211074800}
+  - component: {fileID: -7670990317561543874}
   m_Layer: 0
-  m_Name: Enemy Ship
+  m_Name: EnemyShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8847733028862298149
+--- !u!114 &5746173898211074800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,10 +203,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8847733028862298200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941d54006ff2172cdb474cb551e68aa8, type: 3}
+  m_Script: {fileID: 11500000, guid: bdee4062e2394db3c8db462aff7466d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8847733028862298150
+  stats:
+    fireRate: 0.1
+    bulletsPerShot: 1
+    BulletRate: 1
+    Damage: 10
+--- !u!114 &-7670990317561543874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,10 +220,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8847733028862298200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724d5b02c23d69889a2b626d97979f4c, type: 3}
+  m_Script: {fileID: 11500000, guid: a291c1645f8e4e20d95bd0e44fa7db39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 161828089958917467, guid: d4e19d03d6c0e4fb696cec2f0192ace0, type: 3}
-  bulletSpawn: {fileID: 8847733026968911943}
-  fireRate: 4
-  delay: 1
+  speed: 3
+  dodge: 5
+  smoothing: 7.5
+  tilt: 1
+  startWait: {x: 0.5, y: 1}
+  maneuverTime: {x: 1, y: 2}
+  maneuverWait: {x: 1, y: 2}
+  boundary:
+    xMin: -11
+    xMax: 11
+    yMin: -6
+    yMax: 6

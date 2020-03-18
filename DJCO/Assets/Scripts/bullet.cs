@@ -13,7 +13,7 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
-        Debug.Log(power);
+        //Debug.Log(power);
     }
 
     //TODO: Add enemy health removal
