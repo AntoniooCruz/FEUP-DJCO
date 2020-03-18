@@ -23,6 +23,11 @@ public abstract class PowerUp : MonoBehaviour
             powerUp(weapon);
             Destroy(gameObject);
         }
+        PlayerStats playerStats = collision.GetComponent<PlayerStats>();
+        if(playerStats != null)
+        {
+            playerStats.TakeDamage(20);
+        }
         
     }
 
