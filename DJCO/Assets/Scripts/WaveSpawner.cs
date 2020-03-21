@@ -7,12 +7,19 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { SPAWNING, WAITING, COUNTING }
 
     [System.Serializable]
+    public class EnemyUnit
+    {
+        public Transform unitPrefab;
+        public int count;
+        public float rate;
+    }
+
+    [System.Serializable]
     public class Wave
     {
         public string name;
-        public Transform enemy;
-        public int count;
-        public float rate;
+        public EnemyUnit[] units;
+        public bool isMilestone = false;
     }
 
     public Wave[] waves;
@@ -66,7 +73,7 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
-        if(nextWave + 1 > waves.Length - 1)
+        if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
             Debug.Log("All waves complete! Looping...");
@@ -91,14 +98,16 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        Debug.Log("Spawning Wave: " + _wave.name);
+        Debug.Log("Spawning Wave: " + _wave.name + " || " + _wave.units.Length);
 
         state = SpawnState.SPAWNING;
 
-        for (int i = 0; i < _wave.count; i++)
+        for (int i = 0; i < _wave.units.Length; i++)
         {
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f / _wave.rate);
+
+            StartCoroutine(SpawnEnemyUnit(_wave.units[i]));
+            Debug.Log("Spawning??????");
+            yield return new WaitForSeconds(0.5f);
         }
 
         state = SpawnState.WAITING;
@@ -106,9 +115,22 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
+    IEnumerator SpawnEnemyUnit(EnemyUnit unit)
+    {
+        // Debug.Log("Spawning EnemyUnit: " + unit.unitPrefab.name);
+
+        for (int i = 0; i < unit.count; i++)
+        {
+            SpawnEnemy(unit.unitPrefab);
+            yield return new WaitForSeconds(1f / unit.rate); ;
+        }
+
+        yield break;
+    }
+
     void SpawnEnemy(Transform _enemy)
     {
-        Vector3 vec = new Vector3(13, Random.Range(-6,6), 0);
+        Vector3 vec = new Vector3(13, Random.Range(-6, 6), 0);
         Debug.Log("Spawning Enemy: " + _enemy.name);
         Instantiate(_enemy, vec, transform.rotation);
     }

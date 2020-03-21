@@ -12,6 +12,7 @@ public class EnemyWeapon : MonoBehaviour
         public int bulletsPerShot = 1;
         public float BulletRate = 1.0f;
         public float Damage = 10;
+        public string bulletName = "";
     }
 
     public WeaponStats stats = new WeaponStats();
@@ -46,6 +47,6 @@ public class EnemyWeapon : MonoBehaviour
 
     void Shoot()
     {
-        objectPooler.SpawnFromPool("EnemyBullet", shotSpawn.position, Quaternion.identity);
+        objectPooler.SpawnFromPool(stats.bulletName, shotSpawn.position, Quaternion.identity);
     }
 }

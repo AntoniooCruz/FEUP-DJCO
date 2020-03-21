@@ -211,6 +211,7 @@ MonoBehaviour:
     bulletsPerShot: 1
     BulletRate: 1
     Damage: 10
+    bulletName: EnemyBullet
 --- !u!114 &-7670990317561543874
 MonoBehaviour:
   m_ObjectHideFlags: 0

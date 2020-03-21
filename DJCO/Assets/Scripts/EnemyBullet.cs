@@ -19,6 +19,7 @@ public class EnemyBullet : MonoBehaviour
 
         if (LayerMask.LayerToName(other.gameObject.layer) == "PlayerBullet")
         {
+            Debug.Log("ENEMY VS PLAYER");
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
             Destroy(this.gameObject);

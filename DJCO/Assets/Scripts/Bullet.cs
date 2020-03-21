@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
             e.transform.position = transform.position;
             Destroy(this.gameObject);
         }
-        else if (LayerMask.LayerToName(other.gameObject.layer) == "PlayerBullet")
+        else if (LayerMask.LayerToName(other.gameObject.layer) == "EnemyBullet")
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
