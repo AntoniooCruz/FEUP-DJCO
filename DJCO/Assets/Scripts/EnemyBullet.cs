@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour, IPooledObject
 {
     public float speed;
     public GameObject explosion;
     private Rigidbody2D rb;
 
-    void Start()
+    public void OnObjectSpawn()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0.0f);
