@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     private float startTime;
     private bool on;
+    public float increaseScoreTime;
+    private float nextActionTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +22,18 @@ public class Timer : MonoBehaviour
     {
         if (on)
         {
+
             float t = Time.time - startTime;
             string minutes = ((int)t / 60).ToString("00");
             string seconds = ((int)t % 60).ToString("00");
             string miliseconds = ((t * 100) % 60).ToString("00");
 
             timerText.text = minutes + ":" + seconds + ":" + miliseconds;
+            if(t > nextActionTime)
+            {
+                nextActionTime += increaseScoreTime;
+                GameController.GetInstance().AddScore(10);
+            }
         }
         
     }

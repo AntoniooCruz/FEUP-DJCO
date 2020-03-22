@@ -6,23 +6,44 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    public static GameController instance;
+    private static GameController instance;
+    public Timer gameTimer;
+
+    private int score;
 
     private void Awake() {
         instance = this;
+        score = 0;
     }
     
     public void KillPlayer(Player player)
     {
         Destroy(player.gameObject);
+        gameTimer.timerStop();
     }
 
     public void KillEnemy(EnemyShip enemy)
     {
         Destroy(enemy.gameObject);
+        score += "50";
     }
 
     public void RestartGame() {
         SceneManager.LoadScene("Game");
+    }
+
+    public void AddScore(int value)
+    {
+        score += value;
+    }
+
+    public static GameController GetInstance()
+    {
+        return instance;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
