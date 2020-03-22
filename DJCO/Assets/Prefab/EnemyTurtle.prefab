@@ -144,11 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    Health: 200
-  speed: 5
-  dodge: 5
-  smoothing: 2.5
-  tilt: 5
+    Health: 100
+  speed: 4
+  dodge: 3
+  smoothing: 2
+  tilt: 3
   startWait: {x: 0.5, y: 1}
   maneuverTime: {x: 1, y: 1}
   maneuverWait: {x: 1, y: 1}

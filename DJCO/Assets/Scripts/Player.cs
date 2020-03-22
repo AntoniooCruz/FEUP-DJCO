@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private float objectWidth;
     private float objectHeight;
 
-    public int health;
+    public float health;
     public int maxHealth = 100;
 
     public HealthBar healthBar;
@@ -52,10 +52,10 @@ public class Player : MonoBehaviour
 
     // **** Damage **** //
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
+        healthBar.SetHealth(Mathf.FloorToInt(health));
         Debug.Log("Player just took " + damage + " damage!!");
 
         if (health <= 0)

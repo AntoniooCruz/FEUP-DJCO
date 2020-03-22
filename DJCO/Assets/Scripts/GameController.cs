@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
-
+    
     public static void KillPlayer(Player player)
     {
         Destroy(player.gameObject);

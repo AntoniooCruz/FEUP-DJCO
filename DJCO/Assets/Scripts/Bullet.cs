@@ -24,13 +24,14 @@ public class Bullet : MonoBehaviour
             other.GetComponentInParent<EnemyShip>().DamageEnemy(power * Basedamage);
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+
         }
         else if (LayerMask.LayerToName(other.gameObject.layer) == "EnemyBullet")
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
 
     }

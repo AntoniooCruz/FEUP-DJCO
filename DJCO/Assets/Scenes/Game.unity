@@ -678,9 +678,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: EnemyBullet
-    prefab: {fileID: 161828089958917467, guid: d4e19d03d6c0e4fb696cec2f0192ace0, type: 3}
-    size: 50
+  - tag: BirdBullet
+    prefab: {fileID: 6066645218161151966, guid: 23bb8a48666e4adf5bf6566700504424,
+      type: 3}
+    size: 30
+  - tag: TurtleBullet
+    prefab: {fileID: 8602831654207941325, guid: 2ae614afdccca6f23adc30b20603b7f6,
+      type: 3}
+    size: 30
 --- !u!1 &1015824484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963178086
 GameObject:
@@ -1183,7 +1188,7 @@ RectTransform:
   - {fileID: 1015824485}
   - {fileID: 2124276216}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1263,65 +1268,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037995198}
   m_CullTransparentMesh: 0
---- !u!1 &2040648566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2040648568}
-  - component: {fileID: 2040648567}
-  m_Layer: 0
-  m_Name: WaveSpawer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2040648567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040648566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e341ab692726006e0b597360588ebf66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waves:
-  - name: 
-    enemy: {fileID: 0}
-    count: 0
-    rate: 0
-  - name: 
-    enemy: {fileID: 0}
-    count: 0
-    rate: 0
-  - name: 
-    enemy: {fileID: 0}
-    count: 0
-    rate: 0
-  timeBetweenWaves: 5
-  waveCountdown: 0
-  state: 2
---- !u!4 &2040648568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040648566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055586607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1311,7 @@ Transform:
   m_Children:
   - {fileID: 744893656}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2055586610
 MonoBehaviour:
@@ -1381,18 +1327,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: First Wave
-    enemy: {fileID: 8847733028862298148, guid: f5649b6aab5528a14b9a1aceb9906ea9, type: 3}
-    count: 1
-    rate: 2
+    units:
+    - unitPrefab: {fileID: 5149738803360885163, guid: 01081345b768e7f108ca79f5e2fde3d7,
+        type: 3}
+      count: 10
+      rate: 0.5
+    isMilestone: 0
   - name: Second Wave
-    enemy: {fileID: 8847733028862298148, guid: f5649b6aab5528a14b9a1aceb9906ea9, type: 3}
-    count: 4
-    rate: 1.5
+    units:
+    - unitPrefab: {fileID: 5149738803360885163, guid: 01081345b768e7f108ca79f5e2fde3d7,
+        type: 3}
+      count: 15
+      rate: 0.5
+    - unitPrefab: {fileID: 2325657406647988956, guid: e1e4a0b549018466c8710931f263b66e,
+        type: 3}
+      count: 5
+      rate: 0.15
+    isMilestone: 0
   - name: Third Wave
-    enemy: {fileID: 8847733028862298148, guid: f5649b6aab5528a14b9a1aceb9906ea9, type: 3}
-    count: 40
-    rate: 1.5
-  timeBetweenWaves: 5
+    units:
+    - unitPrefab: {fileID: 5149738803360885163, guid: 01081345b768e7f108ca79f5e2fde3d7,
+        type: 3}
+      count: 30
+      rate: 0.9
+    - unitPrefab: {fileID: 2325657406647988956, guid: e1e4a0b549018466c8710931f263b66e,
+        type: 3}
+      count: 15
+      rate: 0.4
+    isMilestone: 0
+  timeBetweenWaves: 7
   waveCountdown: 0
   state: 2
 --- !u!1 &2103028071

@@ -25,12 +25,23 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     private int nextWave = 0;
 
+
     public float timeBetweenWaves = 5f;
     public float waveCountdown;
 
     private float searchCountdown = 1f;
 
     public SpawnState state = SpawnState.COUNTING;
+
+    
+    public float waveLoopingStage = 0f;
+    
+    public static WaveSpawner instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -76,6 +87,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
+            waveLoopingStage++;
             Debug.Log("All waves complete! Looping...");
         }
 
@@ -104,9 +116,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.units.Length; i++)
         {
-
             StartCoroutine(SpawnEnemyUnit(_wave.units[i]));
-            Debug.Log("Spawning??????");
             yield return new WaitForSeconds(0.5f);
         }
 
@@ -117,8 +127,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemyUnit(EnemyUnit unit)
     {
-        // Debug.Log("Spawning EnemyUnit: " + unit.unitPrefab.name);
-
+        
         for (int i = 0; i < unit.count; i++)
         {
             SpawnEnemy(unit.unitPrefab);

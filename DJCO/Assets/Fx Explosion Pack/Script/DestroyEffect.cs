@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyEffect : MonoBehaviour {
+public class DestroyEffect : MonoBehaviour
+{
 
-	void Update ()
-	{
+    private void Start()
+    {
+		StartCoroutine(Destroy());
+    }
 
-		if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C))
-		   Destroy(transform.gameObject);
-	
+	IEnumerator Destroy (){
+		yield return new WaitForSeconds(3f);
+		Destroy(this.gameObject);
 	}
 }

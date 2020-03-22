@@ -19,17 +19,18 @@ public class EnemyBullet : MonoBehaviour
 
         if (LayerMask.LayerToName(other.gameObject.layer) == "PlayerBullet")
         {
-            Debug.Log("ENEMY VS PLAYER");
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+
         }
         else if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
-            other.GetComponentInParent<Player>().TakeDamage(10);
+            other.GetComponentInParent<Player>().TakeDamage(10 + 10 * 0.1f * WaveSpawner.instance.waveLoopingStage);
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+
         }
     }
 }

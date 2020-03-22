@@ -7,7 +7,7 @@ public class EnemyShip : MonoBehaviour
     [System.Serializable]
     public class EnemyStats
     {
-        public float Health = 100.0f;
+        public float Health = 1f;
     }
 
     public EnemyStats stats = new EnemyStats();
@@ -31,6 +31,7 @@ public class EnemyShip : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0.0f);
+        stats.Health *= 1 + (0.2f*WaveSpawner.instance.waveLoopingStage);
         StartCoroutine(Evade());
     }
 
@@ -72,7 +73,7 @@ public class EnemyShip : MonoBehaviour
     {
         if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
-            other.GetComponentInParent<Player>().TakeDamage(50);
+            other.GetComponentInParent<Player>().TakeDamage(50 + 50 * 0.1f * WaveSpawner.instance.waveLoopingStage);
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
             GameController.KillEnemy(this);

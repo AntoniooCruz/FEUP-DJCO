@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    Health: 100
-  speed: 10
+    Health: 30
+  speed: 7
   dodge: 5
   smoothing: 4
   tilt: 3
