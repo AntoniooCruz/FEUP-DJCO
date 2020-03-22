@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public void KillPlayer(Player player)
     {
         Destroy(player.gameObject);
+        FindObjectOfType<GameoverMenu>().GameoverUI.SetActive(true);
     }
 
     public void KillEnemy(EnemyShip enemy)
@@ -22,7 +23,4 @@ public class GameController : MonoBehaviour
         Destroy(enemy.gameObject);
     }
 
-    public void RestartGame() {
-        SceneManager.LoadScene("Game");
-    }
 }
