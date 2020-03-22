@@ -19,7 +19,6 @@ public abstract class PowerUp : MonoBehaviour
         Weapon weapon = collision.GetComponent<Weapon>();
         if(weapon != null)
         {
-            weapon.AddPowerUp(Weapon.powerUps.RapidFire);
             powerUp(weapon);
             Destroy(gameObject);
         }
