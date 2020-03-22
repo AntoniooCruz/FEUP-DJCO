@@ -76,7 +76,7 @@ public class EnemyShip : MonoBehaviour
             other.GetComponentInParent<Player>().TakeDamage(50 + 50 * 0.1f * WaveSpawner.instance.waveLoopingStage);
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            GameController.instance.KillEnemy(this);
+            GameController.GetInstance().KillEnemy(this);
         }
 
     }
@@ -91,7 +91,7 @@ public class EnemyShip : MonoBehaviour
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            GameController.instance.KillEnemy(this);
+            GameController.GetInstance().KillEnemy(this);
         }
     }
 

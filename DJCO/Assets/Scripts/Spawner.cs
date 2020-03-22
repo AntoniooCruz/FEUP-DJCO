@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        InvokeRepeating("createRandomPower", 2.0f, 2.0f);
+        InvokeRepeating("createRandomPower", 15f, 15f);
     }
 
     void createRandomPower()
