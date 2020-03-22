@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public void KillEnemy(EnemyShip enemy)
     {
         Destroy(enemy.gameObject);
-        score += "50";
+        score += 50;
     }
 
     public void RestartGame() {
