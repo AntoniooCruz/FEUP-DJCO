@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+
+    public static GameController instance;
     
-    public static void KillPlayer(Player player)
+    public void KillPlayer(Player player)
     {
         Destroy(player.gameObject);
     }
 
-    public static void KillEnemy(EnemyShip enemy)
+    public void KillEnemy(EnemyShip enemy)
     {
         Destroy(enemy.gameObject);
-
     }
 }

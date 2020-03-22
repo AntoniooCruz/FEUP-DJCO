@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            GameController.KillPlayer(this);
+            GameController.instance.KillPlayer(this);
         }
     }
 
