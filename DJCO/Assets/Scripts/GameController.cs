@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     
     public void KillPlayer(Player player)
     {
-        gameTimer.timerStop();
+        //gameTimer.timerStop();
         Destroy(player.gameObject);
         FindObjectOfType<GameoverMenu>().GameoverUI.SetActive(true);
     }
@@ -27,6 +27,13 @@ public class GameController : MonoBehaviour
     {
         Destroy(enemy.gameObject);
         score += 50;
+    }
+
+    
+    public void KillBoss(Boss boss)
+    {
+        Destroy(boss.gameObject);
+        score += 1000;
     }
 
     public void RestartGame() {
