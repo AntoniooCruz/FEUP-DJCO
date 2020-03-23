@@ -20,6 +20,9 @@ public class Weapon : MonoBehaviour
     private float nextFire = 0.0f;
     private int powerLvl = 0;
     public PowerBar powerBar;
+    public GameObject[] uiRapidFire = new GameObject[3];
+    public GameObject[] uiShotgun = new GameObject[3];
+
 
     public Dictionary<powerUps, int> powerUp = new Dictionary<powerUps, int>();
 
@@ -46,12 +49,24 @@ public class Weapon : MonoBehaviour
     public void AddPowerUp(powerUps power)
     {
         IncrementCount(powerUp, power);
+        switch (Enum.GetName(typeof(powerUps), power))
+        {
+            case "ShotgunShot":
+                uiShotgun[powerUp[power]-1].SetActive(true);
+                break;
+            case "RapidFire":
+                uiRapidFire[powerUp[power]-1].SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 
     public void RapidFire()
     {
         if(fireRate > 0.3f)
         {
+            AddPowerUp(powerUps.RapidFire);
             fireRate = fireRate / 1.2f;
         }
     }
@@ -71,12 +86,16 @@ public class Weapon : MonoBehaviour
         int currentCount;
         if (powers.TryGetValue(power, out currentCount))
         {
-            powers[power] = currentCount + 1;
+            if(currentCount < 3)
+            {
+                powers[power] = currentCount + 1;
+            }
         }
         else
         {
             powers[power] = 1;
         }
+
     }
 
     public void IncreasePower()
