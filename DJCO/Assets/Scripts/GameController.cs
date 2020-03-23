@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public void KillPlayer(Player player)
     {
         Destroy(player.gameObject);
-        gameTimer.timerStop();
+        // gameTimer.timerStop();
         FindObjectOfType<GameoverMenu>().GameoverUI.SetActive(true);
     }
 
