@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,10 +28,20 @@ public class GameController : MonoBehaviour
     public void KillEnemy(EnemyShip enemy)
     {
         Destroy(enemy.gameObject);
-        score += 50;
+        EnemyScoreHandler(enemy);
     }
 
-    
+    private void EnemyScoreHandler(EnemyShip enemy)
+    {
+        if (enemy.name.Equals("EnemyBird(Clone)"))
+        {
+            score += 50;
+        } else
+        {
+            score += 400;
+        }
+    }
+
     public void KillBoss(Boss boss)
     {
         Destroy(boss.gameObject);

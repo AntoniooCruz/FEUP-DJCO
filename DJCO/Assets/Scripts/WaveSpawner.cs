@@ -150,7 +150,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnRings()
     {
-        Vector3 vec = new Vector3(13, Random.Range(-6, 6), 0);
+        Vector3 vec = new Vector3(13, Random.Range(-4, 4), 0);
         Debug.Log("Spawning Rings");
         Instantiate(ring, vec, transform.rotation);
         yield return new WaitForSeconds(0.3f);

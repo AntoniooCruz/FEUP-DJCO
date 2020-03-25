@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI timerText = null;
     private float startTime;
     private bool on;
     public float increaseScoreTime;
