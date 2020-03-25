@@ -17,13 +17,14 @@ public abstract class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Weapon weapon = collision.GetComponent<Weapon>();
-        if(weapon != null)
+        Player player = collision.GetComponent<Player>();
+        if (weapon != null)
         {
-            powerUp(weapon);
+            powerUp(weapon,player);
             Destroy(gameObject);
         }
         
     }
 
-    public abstract void powerUp(Weapon weapon);
+    public abstract void powerUp(Weapon weapon, Player player);
 }

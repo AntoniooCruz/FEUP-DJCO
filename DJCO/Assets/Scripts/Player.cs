@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject explosion;
+    public AudioSource ringCollectSound;
 
     private void Start()
     {
@@ -50,6 +51,11 @@ public class Player : MonoBehaviour
         rb.MovePosition(pos);
     }
 
+    public void PlayRingSound()
+    {
+        ringCollectSound.Play();
+    }
+
     // **** Damage **** //
 
     public void TakeDamage(float damage)
@@ -64,6 +70,17 @@ public class Player : MonoBehaviour
             e.transform.position = transform.position;
             GameController.GetInstance().KillPlayer(this);
         }
+    }
+
+    public void healDamage(float amount)
+    {
+        health += amount;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        healthBar.SetHealth((int)health);
     }
 
     // **** Collision **** //

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RapidFire : PowerUp
+public class Ring : PowerUp
 {
+    public int healAmount;
 
     public override void powerUp(Weapon weapon, Player player)
     {
-        weapon.RapidFire();
+        player.healDamage(healAmount);
+        player.PlayRingSound();
     }
 }

@@ -28,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     public float waveCountdown;
+    public GameObject ring;
 
     private float searchCountdown = 1f;
 
@@ -83,6 +84,8 @@ public class WaveSpawner : MonoBehaviour
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+        StartCoroutine(SpawnRings());
+
 
         if (nextWave + 1 > waves.Length - 1)
         {
@@ -144,4 +147,15 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(_enemy, vec, transform.rotation);
     }
 
+
+    IEnumerator SpawnRings()
+    {
+        Vector3 vec = new Vector3(13, Random.Range(-6, 6), 0);
+        Debug.Log("Spawning Rings");
+        Instantiate(ring, vec, transform.rotation);
+        yield return new WaitForSeconds(0.3f);
+        Instantiate(ring, vec, transform.rotation);
+        yield return new WaitForSeconds(0.3f); ;
+        Instantiate(ring, vec, transform.rotation);
+    }
 }
