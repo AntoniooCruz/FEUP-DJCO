@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameoverMenu : MonoBehaviour
 {
     public GameObject GameoverUI;
+    public AudioSource gameoverSound;
 
     public void Restart()
     {

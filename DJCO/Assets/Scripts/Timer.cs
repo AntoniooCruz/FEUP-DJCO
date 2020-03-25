@@ -38,12 +38,12 @@ public class Timer : MonoBehaviour
         
     }
 
-    public void timerStop()
+    public void TimerStop()
     {
         on = false;
     }
 
-    public void timerStart()
+    public void TimerStart()
     {
         on = true;
     }

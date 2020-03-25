@@ -10,5 +10,6 @@ public class Ring : PowerUp
     {
         player.healDamage(healAmount);
         player.PlayRingSound();
+        GameController.GetInstance().AddScore(100);
     }
 }
