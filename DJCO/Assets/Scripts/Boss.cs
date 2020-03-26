@@ -38,8 +38,8 @@ public class Boss : MonoBehaviour
         rb.velocity = new Vector2(-speed, 0.0f);
         stats.Health *= 1 + (0.2f * WaveSpawner.instance.waveLoopingStage);
         StartCoroutine(Evade());
-        healthBar.gameObject.SetActive(true);
-        healthBar.maxValue = stats.Health;
+        // healthBar.gameObject.SetActive(true);
+        // healthBar.maxValue = stats.Health;
         maxHeath = stats.Health;
     }
 
@@ -66,7 +66,7 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        healthBar.value = stats.Health;
+        //healthBar.value = stats.Health;
     }
 
 
@@ -116,7 +116,7 @@ public class Boss : MonoBehaviour
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
-            healthBar.gameObject.SetActive(false);
+            //healthBar.gameObject.SetActive(false);
             GameController.GetInstance().KillBoss(this);
         }
     }
