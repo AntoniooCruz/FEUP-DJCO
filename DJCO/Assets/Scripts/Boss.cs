@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class Boss : MonoBehaviour
 
     private float currentSpeed;
 
+    public Slider healthBar;
+    public float maxHeath;
+    public float cumulativeDamage = 0;
+    public bool canBeHit = true;
     private float targetManeuver;
     private Rigidbody2D rb;
 
@@ -31,8 +36,11 @@ public class Boss : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0.0f);
-        stats.Health *= 1 + (0.2f*WaveSpawner.instance.waveLoopingStage);
+        stats.Health *= 1 + (0.2f * WaveSpawner.instance.waveLoopingStage);
         StartCoroutine(Evade());
+        healthBar.gameObject.SetActive(true);
+        healthBar.maxValue = stats.Health;
+        maxHeath = stats.Health;
     }
 
     // **** Movement **** // 
@@ -50,10 +58,16 @@ public class Boss : MonoBehaviour
         }
     }
 
-        IEnumerator Stop() {
-            yield return new WaitForSeconds(3);
-            currentSpeed = 0;
-        }
+    IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(2.5f);
+        currentSpeed = 0;
+    }
+
+    void Update()
+    {
+        healthBar.value = stats.Health;
+    }
 
 
     void FixedUpdate()
@@ -70,7 +84,10 @@ public class Boss : MonoBehaviour
             Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),
             0.0f
         );
+    }
 
+    public void resetCumulativeDamage() {
+        cumulativeDamage = 0;
     }
 
 
@@ -81,23 +98,25 @@ public class Boss : MonoBehaviour
         if (LayerMask.LayerToName(other.gameObject.layer) == "Player")
         {
             other.GetComponentInParent<Player>().TakeDamage(50 + 50 * 0.1f * WaveSpawner.instance.waveLoopingStage);
-            GameObject e = Instantiate(explosion) as GameObject;
-            e.transform.position = transform.position;
-            GameController.GetInstance().KillBoss(this);
         }
 
     }
 
     // **** Health **** // 
 
-    public void DamageEnemy(float damage)
+    public void DamageBoss(float damage)
     {
+        if(!canBeHit && !this.GetComponentInChildren<DrEggmanBoss>().gotHit)
+            return;
+
         stats.Health -= damage;
-        Debug.Log("This ship just took " + damage + " damage!!");
+        cumulativeDamage += damage;
+        Debug.Log("This boss just took " + damage + " damage!!" + stats.Health);
         if (stats.Health <= 0)
         {
             GameObject e = Instantiate(explosion) as GameObject;
             e.transform.position = transform.position;
+            healthBar.gameObject.SetActive(false);
             GameController.GetInstance().KillBoss(this);
         }
     }

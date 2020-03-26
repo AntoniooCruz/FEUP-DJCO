@@ -142,7 +142,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        Vector3 vec = new Vector3(13, Random.Range(-6, 6), 0);
+        Vector3 vec = new Vector3(13, Random.Range(-5, 5), 0);
         Debug.Log("Spawning Enemy: " + _enemy.name);
         Instantiate(_enemy, vec, transform.rotation);
     }

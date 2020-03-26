@@ -7,6 +7,7 @@ TagManager:
   - Boundary
   - Enemy
   - Spawner
+  - BossHealthBar
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - PowerUp
   - EnemyShip
   - EnemyBullet
-  - 
-  - 
+  - Boss
+  - DrEggmanBoss
   - 
   - 
   - 

@@ -41,7 +41,7 @@ public class EnemyWeapon : MonoBehaviour
         if (Time.time > timeToFire)
         {
             timeToFire = Time.time + 1 / stats.fireRate;
-            Shoot();
+                Shoot();
         }
     }
 

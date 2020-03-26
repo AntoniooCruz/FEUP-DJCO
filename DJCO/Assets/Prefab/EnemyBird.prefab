@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    Health: 30
-  speed: 7
+    Health: 20
+  speed: 6
   dodge: 5
   smoothing: 4
   tilt: 3
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    fireRate: 2
+    fireRate: 0.8
     bulletsPerShot: 3
     BulletRate: 1
     Damage: 10

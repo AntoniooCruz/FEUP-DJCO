@@ -12,11 +12,12 @@ public class GameController : MonoBehaviour
 
     private int score;
 
-    private void Awake() {
+    private void Awake()
+    {
         instance = this;
         score = 0;
     }
-    
+
     public void KillPlayer(Player player)
     {
         gameTimer.TimerStop();
@@ -36,7 +37,8 @@ public class GameController : MonoBehaviour
         if (enemy.name.Equals("EnemyBird(Clone)"))
         {
             score += 50;
-        } else
+        }
+        else
         {
             score += 400;
         }
@@ -48,7 +50,8 @@ public class GameController : MonoBehaviour
         score += 1000;
     }
 
-    public void RestartGame() {
+    public void RestartGame()
+    {
         SceneManager.LoadScene("Game");
     }
 

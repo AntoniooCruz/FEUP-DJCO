@@ -33,6 +33,19 @@ public class Bullet : MonoBehaviour
             e.transform.position = transform.position;
             this.gameObject.SetActive(false);
         }
+        else if (LayerMask.LayerToName(other.gameObject.layer) == "Boss" && other.gameObject.GetComponent<Boss>().canBeHit)
+        {
+            other.GetComponentInParent<Boss>().DamageBoss(power * Basedamage);
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
+            this.gameObject.SetActive(false);
+        }
+        else if (LayerMask.LayerToName(other.gameObject.layer) == "DrEggmanBoss")
+        {
+            GameObject e = Instantiate(explosion) as GameObject;
+            e.transform.position = transform.position;
+            this.gameObject.SetActive(false);
+        }
 
     }
 
