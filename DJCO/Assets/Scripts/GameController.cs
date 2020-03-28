@@ -22,8 +22,11 @@ public class GameController : MonoBehaviour
     {
         gameTimer.TimerStop();
         Destroy(player.gameObject);
-        FindObjectOfType<GameoverMenu>().GameoverUI.SetActive(true);
-        FindObjectOfType<GameoverMenu>().gameoverSound.Play();
+        GameoverMenu menu = FindObjectOfType<GameoverMenu>();
+        menu.setFinalScore(score);
+        menu.setFinalTime(gameTimer.getTime());
+        menu.GameoverUI.SetActive(true);
+        menu.gameoverSound.Play();
     }
 
     public void KillEnemy(EnemyShip enemy)

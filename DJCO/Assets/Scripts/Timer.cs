@@ -47,4 +47,8 @@ public class Timer : MonoBehaviour
     {
         on = true;
     }
+
+    public string getTime() {
+        return timerText.text;
+    }
 }
