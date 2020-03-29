@@ -732,8 +732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 448.8, y: -252.7}
-  m_SizeDelta: {x: 84, y: 15.48}
+  m_AnchoredPosition: {x: 311.44, y: -252.7}
+  m_SizeDelta: {x: 221.36, y: 15.48}
   m_Pivot: {x: 0.000000067055225, y: 1.0000002}
 --- !u!114 &65234751
 MonoBehaviour:
@@ -1107,7 +1107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 404.8, y: 157.8}
+  m_AnchoredPosition: {x: 367.1, y: 157.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225794306
@@ -1304,8 +1304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000076294, y: -2.8}
-  m_SizeDelta: {x: 32.12, y: 14.9}
+  m_AnchoredPosition: {x: -26.51, y: -4.1}
+  m_SizeDelta: {x: 258.2, y: 14.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232399001
 MonoBehaviour:
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 'YOUR SCORE: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d5cae40bdd04282a370ba46ad7c852, type: 2}
   m_sharedMaterial: {fileID: -8735502680015014457, guid: f2d5cae40bdd04282a370ba46ad7c852,
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1026
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1395,10 +1395,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 8.698006, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 232399001}
-    characterCount: 1
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2183,7 +2183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113, y: 172}
+  m_AnchoredPosition: {x: 55.8, y: 165.2}
   m_SizeDelta: {x: 505.37, y: 123.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730368459
@@ -5174,8 +5174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.7999992, y: -3.7000003}
-  m_SizeDelta: {x: 203.82, y: 14.9}
+  m_AnchoredPosition: {x: -23.71, y: -5.575}
+  m_SizeDelta: {x: 395.12, y: 11.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839021029
 MonoBehaviour:
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00:00
+  m_text: 'YOUR TIME: 00:00:00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d5cae40bdd04282a370ba46ad7c852, type: 2}
   m_sharedMaterial: {fileID: -8735502680015014457, guid: f2d5cae40bdd04282a370ba46ad7c852,
@@ -5231,7 +5231,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 1026
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5265,10 +5265,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 8.698006, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1839021029}
-    characterCount: 8
+    characterCount: 19
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 3
+    spaceCount: 2
+    wordCount: 5
     linkCount: 0
     lineCount: 1
     pageCount: 1
